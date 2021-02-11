@@ -1,0 +1,33 @@
+{{>header}}
+{{>nav}}
+
+
+<div class="container-fluid" style="margin-top:30px">
+<form method="post"  action="/addData">
+<div class="row">
+  <div class="form-group col-3">
+    <label for="id">Task iD:</label>
+    <input type="number" id ="id" required autofocus name="id" placeholder="Enter id">
+   </div>
+<div class="form-group col-3">
+  <label for="title">Task Title:</label>
+  <input type="text" id ="title" required  name="title" placeholder="Enter Title">
+ </div>
+ <div class="form-group col-2">
+  <label for="select">Task Type: </label>
+   <select id="select" name="select" class="dropdown dropright">
+   <option  value="type1">Type 1</option>
+   <option  value="type2">Type 2</option>
+   <option  value="type3">Type 3</option>
+   </select>
+</div>
+</div>
+<div class="row">
+ <div class="form-group col-6">
+  <label for="content">Task Content:</label>
+  <textarea required id ="content"class="form-control" name="content" rows="4"  placeholder="Enter Content"> </textarea>
+ </div>
+ </div>
+ <button type="submit" class="btn btn-primary col-3 text-center">Submit</button>
+</div>
+</form>

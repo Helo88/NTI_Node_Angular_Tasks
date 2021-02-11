@@ -1,0 +1,47 @@
+{{>header}}
+{{>nav}}
+
+{{#unless data}}
+<div class="container-fluid" style="margin-top:30px">
+<form method="post"  action="/search">
+<div class="row">
+  <div class="form-group col-3">
+    <label for="id">Task iD:</label>
+    <input type="number" id ="id" required autofocus name="id" placeholder="Enter task id">
+   </div>
+</div>
+
+<button type="submit" class="btn btn-primary col-3 text-center">Submit</button>
+</form>
+</div>
+
+
+{{else}}
+
+<div class="container">
+<table  class="table" >
+  <thead>
+      <tr>
+        <th>TaskID</th>
+        <th>TaskTitle</th>
+        <th>Task Content</th>
+        <th>Task Type</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td> {{data.id}} </td>
+        <td> {{data.title}} </td>
+        <td> {{data.content}} </td>
+        <td> {{data.select}} </td>
+          <td> <a href="/delTask/{{data.id}}"> <button class="btn btn-danger"> delete</button> </a> </td>
+          <td> <a href="/editTask/{{data.id}}"> <button class="btn btn-primary">edit </button> </a> </td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+
+
+{{/unless}}

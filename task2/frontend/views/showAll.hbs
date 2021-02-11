@@ -1,0 +1,35 @@
+{{>header}}
+{{>nav}}
+{{#if error}}
+<div class="alert alert-danger">
+    {{error}}
+</div>
+
+{{else}}
+<div class="container">
+<table  class="table" >
+  <thead>
+      <tr>
+        <th>TaskID</th>
+        <th>TaskTitle</th>
+        <th>Task Content</th>
+        <th>Task Type</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#each data}}
+    <tr>
+      <td> {{this.id}} </td>
+        <td> {{this.title}} </td>
+        <td> {{this.content}} </td>
+        <td> {{this.select}} </td>
+        <td> <a href="/delTask/{{this.id}}"> <button class="btn btn-danger"> delete</button> </a> </td>
+        <td> <a href="/editTask/{{this.id}}"> <button class="btn btn-primary">edit </button> </a> </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>
+
+{{/if}}
+{{>footer}}
